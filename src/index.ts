@@ -1,6 +1,6 @@
 import * as webpack from "webpack";
 import {readFileSync, unlinkSync} from "fs";
-import {basename, join} from "path";
+import {basename, join, dirname} from "path";
 import {execFile} from "child_process";
 
 const proxyBuilder = (filename: string) => `
@@ -19,7 +19,8 @@ function loader(this: webpack.loader.LoaderContext, contents: string) {
       GOCACHE: join(__dirname, "./.gocache"),
       GOOS: "js",
       GOARCH: "wasm"
-    }
+    },
+    cwd: dirname(this.resourcePath)
   };
 
   const goBin = getGoBin(opts.env.GOROOT);

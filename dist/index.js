@@ -16,7 +16,8 @@ function loader(contents) {
             GOCACHE: path_1.join(__dirname, "./.gocache"),
             GOOS: "js",
             GOARCH: "wasm"
-        }
+        },
+        cwd: path_1.dirname(this.resourcePath)
     };
     const goBin = getGoBin(opts.env.GOROOT);
     const outFile = `${this.resourcePath}.wasm`;
