@@ -40,9 +40,6 @@ function loader(this: webpack.loader.LoaderContext, contents: string) {
     cb(
       null,
       [
-        "require('!",
-        join(__dirname, "..", "lib", "wasm_exec.js"),
-        "');",
         "import gobridge from '",
         join(__dirname, "..", "dist", "gobridge.js"),
         "';",

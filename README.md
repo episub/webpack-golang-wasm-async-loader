@@ -1,3 +1,5 @@
+Removed wasm_exec. Due to issues making the 1.13 version build within webpack its easier to just load it manually in index.html.
+
 [![Build Status][build]][build-url]
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
