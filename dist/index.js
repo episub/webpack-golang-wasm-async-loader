@@ -4,7 +4,7 @@ const fs_1 = require("fs");
 const path_1 = require("path");
 const child_process_1 = require("child_process");
 const proxyBuilder = (filename) => `
-export default gobridge(fetch('${filename}').then(response => response.arrayBuffer()));
+export default gobridge(fetch('/${filename}').then(response => response.arrayBuffer()));
 `;
 const getGoBin = (root) => `${root}/bin/go`;
 function loader(contents) {

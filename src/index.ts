@@ -4,7 +4,7 @@ import {basename, join, dirname} from "path";
 import {execFile} from "child_process";
 
 const proxyBuilder = (filename: string) => `
-export default gobridge(fetch('${filename}').then(response => response.arrayBuffer()));
+export default gobridge(fetch('/${filename}').then(response => response.arrayBuffer()));
 `;
 
 const getGoBin = (root: string) => `${root}/bin/go`;
